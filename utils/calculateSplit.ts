@@ -12,6 +12,11 @@ export const calculateSplit = (
     valueOfSplitSale * percentile
   ).toFixed(2);
 
+  const valueOfJointSaleWithTaxes = (
+    (valueWithTaxes - Number(valueOfSplitSaleWithTaxes)) *
+    0.15
+  ).toFixed(2);
+
   const splitSaleWithFifteenPercentOfTheRemainder = (
     Number(valueOfSplitSaleWithTaxes) +
     (valueWithTaxes - Number(valueOfSplitSaleWithTaxes)) * 0.15
@@ -31,6 +36,7 @@ export const calculateSplit = (
   return {
     taxPercentile,
     valueOfSplitSaleWithTaxes,
+    valueOfJointSaleWithTaxes,
     splitSaleWithFifteenPercentOfTheRemainder,
     remainderOfTheSplitSale,
     sumVerification,

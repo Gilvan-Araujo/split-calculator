@@ -10,19 +10,7 @@ const Home: NextPage = () => {
   const [valueWithTaxes, setValueWithTaxes] = React.useState(223.19);
   const [valueOfSplitSale, setValueOfSplitSale] = React.useState(90);
 
-  const [splitCalculation, setSplitCalculation] = React.useState<{
-    taxPercentile: string;
-    valueOfSplitSaleWithTaxes: string;
-    splitSaleWithFifteenPercentOfTheRemainder: string;
-    remainderOfTheSplitSale: string;
-    sumVerification: string;
-  }>({
-    taxPercentile: "",
-    valueOfSplitSaleWithTaxes: "",
-    splitSaleWithFifteenPercentOfTheRemainder: "",
-    remainderOfTheSplitSale: "",
-    sumVerification: "",
-  });
+  const [splitCalculation, setSplitCalculation] = React.useState<any>({});
 
   useEffect(() => {
     setSplitCalculation(
@@ -72,7 +60,10 @@ const Home: NextPage = () => {
         <h3>
           {`Percentual de taxa: R$ ${splitCalculation.taxPercentile} %`}
           <br />
+          <br />
           {`Valor da venda separada com taxas: R$ ${splitCalculation.valueOfSplitSaleWithTaxes}`}
+          <br />
+          {`Valor da venda conjunta com taxas: R$ ${splitCalculation.valueOfJointSaleWithTaxes}`}
           <br />
           <br />
           {`Venda + 15% (J): R$ ${splitCalculation.splitSaleWithFifteenPercentOfTheRemainder}`}
